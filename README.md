@@ -2,20 +2,24 @@
 Relational Algebra Calculator 🧮 A web-based educational tool (HTML/CSS/JS) for simulating database operations: selection (sigma), projection (pi), union (cup), intersection (cap), difference (-$), and product (times). Ideal for the BTS DAI curriculum to visualize the logical manipulation of data before moving on to SQL.
 
 
-1.INTRODUCTION
-L'algèbre relationnelle est le fondement théorique des bases de données relationnelles (SQL). L'objectif de cette application est de fournir un outil interactif permettant de manipuler des relations (tables) à travers les opérations fondamentales afin de valider la structure des données avant leur implémentation physique.
-2.Architecture Technique
-L'application repose sur une architecture Front-End pure (Client-Side), garantissant une exécution rapide sans dépendance serveur.
+1. INTRODUCTION
+Relational algebra is the theoretical foundation of relational databases (SQL). The goal of this application is to provide an interactive tool for manipulating relationships (tables) through fundamental operations in order to validate the data structure before its physical implementation.
 
-HTML5 : Structure de l'interface (Zones de saisie, contrôles et affichage).
+2. Technical Architecture
+The application is based on a pure front-end (client-side) architecture, ensuring fast execution without server dependencies.
 
-CSS3 : Mise en forme moderne type "Dark Mode" pour un confort visuel de type développeur.
+HTML5: Interface structure (input fields, controls, and display).
 
-JavaScript (ES6+) : Moteur logique gérant le parsing des données, les algorithmes relationnels et la mise à jour dynamique du DOM.
-3. Analyse des Opérations Implémentées
-A. Opérations Unaires (sur une seule table)Sélection ($\sigma$) : Filtre les n-uplets (lignes) répondant à un prédicat logique.Implémentation : Utilisation de la méthode .filter().Projection ($\pi$) : Réduit le schéma de la relation à un sous-ensemble d'attributs (colonnes).Implémentation : Utilisation de .map() pour reconstruire des objets avec les clés sélectionnées. 
-B. Opérations Binaires (sur deux tables)Union ($\cup$) : Fusionne deux relations de même schéma en éliminant les doublons.Intersection ($\cap$) : Extrait les n-uplets communs aux deux relations.Différence ($-$) : Extrait les n-uplets présents dans la première relation mais pas dans la seconde.Produit Cartésien ($\times$) : Combine chaque ligne de la Relation A avec chaque ligne de la Relation B.
-4. Choix de Conception Logique
-Format de Données : Le format JSON a été choisi pour la saisie car il représente nativement des objets structurés, facilitant ainsi le passage entre l'interface et le moteur de calcul JavaScript.
+CSS3: Modern "Dark Mode" style styling for a developer-friendly visual experience.
 
-Gestion de l'intégrité : Pour les opérations d'ensemble (Union, Intersection), le programme compare les objets par "sérialisation" (JSON.stringify) pour s'assurer que même les objets identiques en valeur mais différents en référence mémoire soient correctement identifiés comme doublons.
+JavaScript (ES6+): Logical engine managing data parsing, relational algorithms, and dynamic DOM updates.
+
+3. Analysis of Implemented Operations
+A. Unary Operations (on a single table) Selection ($\sigma$): Filters the n-tuples (rows) that satisfy a logical predicate. Implementation: Uses the .filter() method. Projection ($\pi$): Reduces the relation schema to a subset of attributes (columns). Implementation: Uses .map() to reconstruct objects with the selected keys.
+
+B. Binary Operations (on two tables) Union ($\cup$): Merges two relations of the same schema, eliminating duplicates. Intersection ($\cap$): Extracts the tuples common to both relations. Difference ($-$): Extracts the tuples present in the first relation but not in the second. Cartesian Product ($\times$): Combines each row of Relation A with each row of Relation B.
+
+4. Logical Design Choices
+Data Format: The JSON format was chosen for input because it natively represents structured objects, thus facilitating the transition between the interface and the JavaScript calculation engine.
+
+Integrity Management: For set operations (Union, Intersection), the program compares objects by "serialization" (JSON.stringify) to ensure that even objects identical in value but different in memory reference are correctly identified as duplicates.
