@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relational Algebra Calculator - BTS DAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Relation Data (JSON)</h2>
+    <div class="input-container">
+        <label>Relation A</label>
+        <textarea id="dataA">[
+  {"ID": 1, "Nom": "Ahmed", "Atelier": "IA"},
+  {"ID": 2, "Nom": "Sara", "Atelier": "C++"}
+]</textarea>
+    </div>
+    <div class="input-container">
+        <label>Relation B</label>
+        <textarea id="dataB">[
+  {"ID": 3, "Nom": "Meryem", "Atelier": "IA"},
+  {"ID": 1, "Nom": "Ahmed", "Atelier": "IA"}
+]</textarea>
+    </div>
+    <p class="note">Note: Format must be a valid JSON array of objects.</p>
+</div>
+
+<div class="main">
+    <h2>Operations</h2>
+    <div class="params">
+        <input type="text" id="paramInput" placeholder="Condition (e.g. Atelier == 'IA') or Columns (e.g. Nom, Atelier)">
+    </div>
+    
+    <div class="controls">
+        <button onclick="runOp('selection')">Selection (σ)</button>
+        <button onclick="runOp('projection')">Projection (π)</button>
+        <button onclick="runOp('union')">Union (∪)</button>
+        <button onclick="runOp('intersection')">Intersection (∩)</button>
+        <button onclick="runOp('difference')">Difference (−)</button>
+        <button onclick="runOp('product')">Product (×)</button>
+    </div>
+
+    <div id="errorMessage"></div>
+    <div id="resultArea">
+        <p>Results will appear here...</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
